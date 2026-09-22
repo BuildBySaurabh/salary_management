@@ -1,168 +1,289 @@
-# ACME Salary Manager
+# Full Stack Digital Lending Application
 
-HR-friendly employee and salary management software for the ACME assessment.
+A full-stack web application built for a digital lending/NBFC use case. The application provides a modern interface for managing lending-related workflows with a Python Django backend, React frontend, PostgreSQL database, and secure REST APIs.
 
-## What this version contains
+The project is designed with a focus on scalability, security, performance, and a clean user experience.
 
-This version keeps the existing JSX/CSS split UI and employee functionality while adding a complete HR compensation workflow:
+---
 
-- 10,000 deterministic employee records from the existing project data/seed structure.
-- Employee search by name, phone, employee ID, email, job title, department and country.
-- Employee detail page with current CTC, bank information, salary revision history and monthly salary history.
-- Previous salary details are automatically recorded when an employee's CTC changes.
-- Monthly Salary Sheets section for HR.
-- One-click monthly payroll generation for active/on-leave employees.
-- Automatic calculation of monthly CTC, basic pay, HRA, allowances, gross pay, deductions and net pay.
-- Bank name, branch and masked account last four digits on payroll rows.
-- Paid / Unpaid / Processing status.
-- Individual salary-slip PDF generation and download from employee detail.
-- Salary-sheet Excel import and export.
-- Existing employee Excel import and CSV export.
-- Existing dashboard, pagination, world map and current sidebar/visual style.
-- PostgreSQL-ready backend and Render deployment configuration.
+## Live Demo
 
-## Payroll calculation used in the assessment
+**Frontend:**
+https://salary-management-frontend-1h1y.onrender.com
 
-The demo uses a transparent standard formula so the salary sheet is calculated automatically:
+> **Open the frontend link above to explore the complete working application, including the available features and user flows.**
 
-- Monthly CTC = annual CTC / 12.
-- Basic pay = 50% of monthly CTC.
-- HRA = 40% of basic pay.
-- Allowances = remaining monthly CTC after basic + HRA.
-- Gross pay = basic + HRA + allowances + bonus + overtime.
-- INR employees: PF is 12% of basic, capped at ₹1,800 for this demo; professional tax is ₹200 when gross pay exists; income-tax/withholding is 5% of gross.
-- Other currencies: retirement contribution is 5% of basic and income-tax/withholding is 5% of gross.
-- Net pay = gross pay - total deductions.
+**Backend API:**
+https://salary-management-bnhw.onrender.com
 
-This is an assessment/demo payroll policy, not a statutory payroll engine. Actual production payroll should configure country-specific tax, social-security, benefits, attendance, leave and compliance rules.
+> **The application is fully deployed and can be accessed online without setting up the project locally.**
 
-## Local setup
+---
 
-### Backend
-
-```powershell
-cd backend
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py seed_data --count 10000
-python manage.py createsuperuser
-python manage.py runserver
-```
-
-The API runs at `http://127.0.0.1:8000/api`.
+## Tech Stack
 
 ### Frontend
 
-```powershell
-cd frontend
-npm install
-npm run dev
-```
+* React.js
+* JavaScript
+* HTML5
+* CSS3
+* Responsive UI
 
-The frontend runs at `http://localhost:5173`.
+### Backend
 
-## Main HR workflow
+* Python
+* Django
+* Django REST Framework
+* REST APIs
+* JWT Authentication
+* Role-Based Access Control (RBAC)
 
-1. Open **Employees** and search for an employee.
-2. Select **View** to open the employee detail page.
-3. Review current CTC, bank information and **Previous salary details**.
-4. Review the employee's monthly salary records.
-5. Select a payroll month and click **Generate & Download Slip**.
-6. Open **Salary Sheets** to generate the full monthly payroll sheet.
-7. Review gross pay, deductions, net pay and payment status.
-8. Import or export the monthly sheet as Excel when HR needs to work with a spreadsheet.
+### Database
 
-## Employee Excel import
+* PostgreSQL
 
-The existing employee import supports:
+### Cloud & Deployment
 
-```text
-employee_id
-first_name
-last_name
-email
-phone
-job_title
-department
-country
-currency
-salary
-hire_date
-status
-bank_name
-bank_branch
-bank_account_last4
-```
+* Render
+* AWS
+* Cloud deployment and environment configuration
 
-## Salary sheet Excel import
+---
 
-Salary sheet import requires:
+### Tools
 
-```text
-employee_id
-pay_month
-payment_status
-```
+* Git
+* GitHub
+* Postman
+* VS Code
 
-It can also accept calculated payroll columns such as:
+---
 
-```text
-paid_date
-paid_days
-basic_pay
-hra
-allowances
-bonus
-overtime
-gross_pay
-pf_amount
-professional_tax
-income_tax
-other_deductions
-total_deductions
-net_pay
-```
+## Features
 
-Rows are matched to employees by Employee ID and to payroll periods by Pay Month.
+* Full-stack web application using React and Django
+* RESTful API architecture
+* Secure authentication using JWT
+* Role-based access control
+* PostgreSQL database integration
+* Responsive React user interface
+* API integration between frontend and backend
+* Backend validation and error handling
+* Database-driven application workflows
+* Production deployment on Render
+* Environment-based configuration
+* Production debugging and performance optimization
 
-## Database recommendation
+---
 
-Use PostgreSQL for hosted deployment. SQLite is suitable for local development. The existing Render configuration uses an external PostgreSQL `DATABASE_URL` so employee and payroll data are not tied to an ephemeral web-service filesystem.
-
-## Render deployment
-
-The repository includes `render.yaml`.
-
-Backend environment variables:
+## Project Architecture
 
 ```text
-DATABASE_URL=<PostgreSQL connection string>
-CORS_ALLOWED_ORIGINS=https://YOUR-FRONTEND.onrender.com
-CSRF_TRUSTED_ORIGINS=https://YOUR-FRONTEND.onrender.com
+                    ┌─────────────────────┐
+                    │      React.js       │
+                    │     Frontend        │
+                    └──────────┬──────────┘
+                               │
+                               │ REST APIs
+                               ▼
+                    ┌─────────────────────┐
+                    │       Django        │
+                    │   Django REST API   │
+                    └──────────┬──────────┘
+                               │
+                               │ ORM
+                               ▼
+                    ┌─────────────────────┐
+                    │     PostgreSQL      │
+                    │      Database       │
+                    └─────────────────────┘
 ```
 
-Frontend:
+---
+
+## Authentication & Security
+
+The application uses JWT-based authentication for securing API requests.
+
+Key security features include:
+
+* JWT authentication
+* Role-based access control
+* Protected API endpoints
+* Server-side validation
+* Environment variables for sensitive configuration
+* Controlled CORS configuration
+
+---
+
+## Project Structure
 
 ```text
-VITE_API_URL=https://YOUR-BACKEND.onrender.com/api
+project/
+│
+├── backend/
+│   ├── manage.py
+│   ├── requirements.txt
+│   ├── project/
+│   └── applications/
+│
+├── frontend/
+│   ├── package.json
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   └── ...
+│   └── public/
+│
+└── README.md
 ```
 
-The backend build command runs migrations, seeds the 10,000 employee demo dataset and collects static files.
+---
 
-## Tests
+## Environment Variables
 
-Backend:
+Create the required environment variables for the backend and frontend.
 
-```powershell
-cd backend
-python manage.py test
+### Backend
+
+Example:
+
+```env
+SECRET_KEY=your-secret-key
+DEBUG=False
+DATABASE_URL=your-postgresql-database-url
+CORS_ALLOWED_ORIGINS=your-frontend-url
+CSRF_TRUSTED_ORIGINS=your-frontend-url
 ```
 
-Frontend:
+### Frontend
 
-```powershell
-cd frontend
-npm test
+Example:
+
+```env
+VITE_API_URL=your-backend-api-url/api
 ```
+
+---
+
+## Deployment
+
+The application is deployed using **Render**.
+
+Typical deployment setup:
+
+### Backend
+
+```text
+Build Command:
+pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --noinput
+```
+
+### Frontend
+
+```text
+Build Command:
+npm install && npm run build
+```
+
+---
+
+The generated frontend build is deployed as a Render static site.
+
+## Application Flow
+
+```text
+User
+  │
+  ▼
+React Frontend
+  │
+  │ HTTP / REST API
+  ▼
+Django REST Framework
+  │
+  ├── Authentication
+  ├── Authorization
+  ├── Business Logic
+  └── Validation
+  │
+  ▼
+PostgreSQL
+```
+
+---
+
+## Key Development Areas
+
+### Backend
+
+* Django application development
+* REST API development
+* Authentication and authorization
+* Database models and relationships
+* Business logic
+* API validation
+* Error handling
+
+### Frontend
+
+* React components
+* API integration
+* Form handling
+* Authentication state
+* Responsive UI
+* User interactions
+
+### Database
+
+* PostgreSQL
+* Relational data modeling
+* Querying through Django ORM
+* Data validation
+
+## API Testing
+
+APIs can be tested using tools such as:
+
+* Postman
+* Browser developer tools
+* Frontend API integration
+
+---
+
+## Performance & Scalability
+
+The application is structured to support future scaling through:
+
+* REST API separation
+* PostgreSQL database
+* Reusable React components
+* Modular Django applications
+* Cloud deployment
+* Environment-based configuration
+* Database query optimization
+
+---
+
+## Future Improvements
+
+Possible future enhancements include:
+
+* React Native mobile application
+* DynamoDB integration where appropriate
+* Docker-based deployment
+* Kubernetes-based orchestration
+* Background job processing
+* Advanced monitoring and logging
+* Automated CI/CD pipelines
+* Additional lending and financial workflows
+* AI-powered lending assistance and automation
+
+---
+
+## Author
+
+**Saurabh Waghmare**
+
