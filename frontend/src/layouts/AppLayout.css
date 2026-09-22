@@ -1,0 +1,24 @@
+.app-shell{
+    min-height:100vh;
+    background:#f7f9fc
+}
+.main-area{
+    margin-left:254px;
+    min-height:100vh;
+    transition:.2s
+}
+.sidebar-collapsed .main-area{
+    margin-left:78px
+}.page-content{
+    padding:0 22px 22px;
+    max-width:1600px;
+    margin:auto
+}
+@media(max-width:1050px){
+    .main-area{margin-left:78px}
+}
+@media(max-width:720px){
+    .main-area,.sidebar-collapsed .main-area
+    {margin-left:0}
+    .page-content{padding:0 13px 20px}
+}

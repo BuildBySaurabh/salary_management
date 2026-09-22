@@ -1,0 +1,32 @@
+@import url('../styles/shared.css');
+.settings-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:16px
+}
+.settings-card{padding:24px}
+.settings-card h3{margin:0 0 5px}
+.settings-card>p{font-size:12px;color:#7789a1;margin:0 0 20px}
+.settings-card label{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+    font-size:11px;
+    font-weight:600;
+    color:#506784;
+    max-width:500px;
+    margin-bottom:13px
+}
+.settings-card input{
+    border:1px solid #dce4ef;
+    border-radius:7px;
+    padding:10px 11px;
+    outline:none;
+    background:#fff;
+    color:#294466;
+    font-size:12px
+}
+.settings-card input:focus{border-color:#6f9fe9;box-shadow:0 0 0 3px #edf4ff}
+@media(max-width:720px){
+    .settings-grid{grid-template-columns:1fr}
+}

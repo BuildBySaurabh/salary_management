@@ -1,0 +1,238 @@
+@import url('../styles/shared.css');
+.dashboard-page{width:100%}
+.hero-banner{
+    margin-top:0;
+    min-height:133px;
+    padding:25px 24px;
+    border-radius:10px;
+    background:linear-gradient(100deg,#e4f3ff,#e9f0ff 55%,#e7dcff);
+    display:flex;align-items:center;
+    justify-content:space-between;
+    overflow:hidden
+}
+    .hero-banner h1{font-size:25px;margin:0 0 9px}
+    .hero-banner p{margin:0 0 6px;font-size:14px}
+    .hero-banner span{font-size:12px;color:#58708f}
+    .hero-illustration{
+        width:270px;height:115px;
+        position:relative}
+        .hero-screen{
+            position:absolute;
+            right:45px;
+            top:14px;
+            width:125px;
+            height:78px;
+            border:7px solid #7895d7;border-radius:8px;
+            background:#fff;box-shadow:8px 10px 0 #c9d8ff;transform:skew(-4deg);
+            padding:12px
+        }
+        .hero-screen div{
+            height:7px;
+            background:#c4dbff;border-radius:3px;
+            margin-bottom:7px
+        }
+        .hero-screen div:nth-child(2){
+            width:65%;
+            height:30px;
+            background:linear-gradient(90deg,#d8e8ff 30%,#5e9cf5 31% 40%,#d8e8ff 41% 60%,#7b63e8 61% 74%,#d8e8ff 75%)}
+            .hero-illustration i{
+                position:absolute;
+                bottom:7px;
+                width:38px;
+                height:54px;
+                background:#6fd2d0;border-radius:50% 50% 15% 15%;opacity:.8}
+                .hero-illustration i:first-of-type{left:28px}
+                .hero-illustration i:last-of-type{right:0;background:#7f9df0;transform:rotate(28deg)}
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;margin:17px 0
+}
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr;
+    gap:16px;margin-bottom:16px
+}
+.dashboard-grid.lower{
+    grid-template-columns:1.2fr 1fr
+}.small-pill{
+    font-size:11px;
+    padding:7px 12px;
+    border:1px solid #dfe6f0;
+    border-radius:7px;color:#506582
+}
+.donut-wrap{
+    display:flex;
+    align-items:center
+}
+.legend-list{
+    flex:1;padding-right:5px
+}
+    .legend-list>div,.country-list>div{
+        display:grid;
+        grid-template-columns:10px 1fr auto;
+        gap:8px;
+        align-items:center;
+        font-size:11px;
+        margin:8px 0;color:#536984
+    }
+    .legend-list b,.country-list b{
+        color:#203a62}
+        .legend-dot{width:9px;
+            height:9px;
+            border-radius:3px;display:inline-block
+        }
+        .distribution-panel{
+            display:flex;
+            min-height:245px;
+            align-items:center
+        }
+        .fake-map{
+            position:relative;
+            height:210px;
+            flex:1;
+            background:radial-gradient(ellipse at 50% 52%,#eef2f7 0 22%,transparent 23%),linear-gradient(150deg,transparent 0 40%,#eef2f7 41% 48%,transparent 49% 55%,#eef2f7 56% 64%,transparent 65%);
+            border-radius:50% 45% 48% 43%
+        }
+            .map-dot{
+                position:absolute;
+                width:24px;
+                height:17px;
+                border-radius:50%;
+                background:#2f7df4;box-shadow:0 0 0 5px rgba(47,125,244,.1)
+            }
+                .dot-0{
+                    left:53%;
+                    top:56%;
+                    background:#ff9b21
+                }
+                    .dot-1{
+                        left:20%;
+                        top:42%;
+                        background:#2f7df4
+                    }
+                        .dot-2{
+                            left:48%;
+                            top:36%;
+                            background:#7a5af8
+                        }
+                            .dot-3{left:55%;
+                                top:40%;
+                                background:#ff9b21
+                            }
+                                .dot-4{
+                                    left:69%;
+                                    top:52%;
+                                    background:#34b8cf}
+                                    .dot-5{
+                                        left:82%;
+                                        top:68%;
+                                        background:#7a5af8
+                                    }
+                                    .dot-6{
+                                        left:72%;
+                                        top:52%;
+                                        background:#8d8be9
+                                    }
+                                    .dot-7{
+                                        left:57%;
+                                        top:42%;
+                                        background:#cbd5e1
+                                    }
+                                    .country-list{
+                                        width:135px
+                                    }
+                                    .country-list>div{
+                                        grid-template-columns:9px 1fr auto
+                                    }
+                                    .app-footer{
+                                        font-size:10px;
+                                        color:#70829a;
+                                        padding:12px 0 0;
+                                        display:flex;
+                                        gap:15px
+                                    }
+                                    .system-status{
+                                        margin-left:auto
+                                    }
+                                    .system-status i{
+                                        display:inline-block;
+                                        width:7px;
+                                        height:7px;
+                                        background:#18ae7c;border-radius:50%;
+                                        margin-right:5px
+                                    }
+                                    .dashboard-page .loading-panel,.dashboard-page .page-error{
+                                        min-height:calc(100vh - 100px)
+                                    }
+@media(max-width:1050px){
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr)}
+        .dashboard-grid,.dashboard-grid.lower{
+            grid-template-columns:1fr}
+        }
+@media(max-width:720px){
+    .hero-banner{margin:0 -13px;
+        border-radius:0;
+        padding:22px 17px}
+        .hero-illustration{display:none}
+        .stats-grid{grid-template-columns:1fr 1fr;
+            gap:9px}
+            .dashboard-grid,.dashboard-grid.lower{
+                grid-template-columns:1fr}
+                .donut-wrap{display:block}
+                .donut-wrap>div:first-child{width:100%!important}
+                .legend-list{padding:0 10px 10px}
+                .distribution-panel{display:block}
+                .fake-map{min-height:170px}
+                .country-list{
+                    width:100%;
+                    display:grid;
+                    grid-template-columns:1fr 1fr}
+                    .country-list>div{margin:5px 0}
+                }
+.world-distribution{
+    position:relative
+}
+.world-map-wrap{
+    position:relative;
+    flex:1;
+    min-width:0
+}
+.world-map-wrap svg{
+    display:block;
+    width:100%;
+    height:auto
+}
+.map-tooltip{
+    position:absolute;
+    top:8px;
+    left:8px;
+    z-index:3;
+    background:#15294d;
+    color:#fff;
+    border-radius:7px;
+    padding:9px 11px;
+    box-shadow:0 8px 20px rgba(21,41,77,.18);
+    display:grid;
+    gap:2px;
+    font-size:10px;
+    pointer-events:none
+}
+.map-tooltip strong{
+    font-size:12px
+}
+.map-tooltip span{
+    color:#dbe7fb
+}
+.map-tooltip small{
+    color:#9fb2d0
+}
+.world-map-wrap .rsm-geographies{
+    overflow:visible
+}
+@media(max-width:720px){
+    .world-map-wrap{min-height:190px}
+    .world-map-wrap svg{min-height:190px}
+    .map-tooltip{top:4px;left:4px}
+    .country-list{margin-top:8px}}

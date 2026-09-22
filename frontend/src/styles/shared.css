@@ -1,0 +1,26 @@
+/* Shared layout and form primitives used by multiple pages. */
+.card{background:#fff;border:1px solid #e7ecf4;border-radius:10px;box-shadow:0 3px 15px rgba(31,60,100,.03)}
+.page{padding:25px 0}
+.page-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:20px}
+.page-heading h1{margin:4px 0 6px;font-size:28px}
+.page-heading>div>span{font-size:13px;color:#70829a}
+.eyebrow{margin:0;color:#2f72d7;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.heading-actions{display:flex;gap:9px}
+.button{border:0;border-radius:7px;padding:10px 14px;display:inline-flex;align-items:center;justify-content:center;gap:7px;font-size:12px;font-weight:600}
+.button.primary{background:#2767d7;color:#fff}.button.primary:hover{background:#1f57ba}
+.button.secondary{background:#fff;border:1px solid #dbe3ee;color:#294466}
+.button.danger{background:#fff0f1;color:#d7384d;border:1px solid #ffd4d8}
+.button:disabled{opacity:.55;cursor:not-allowed}
+.loading-panel,.page-error,.screen-loader{min-height:220px;display:grid;place-items:center;color:#71829a;font-size:13px}
+.back-link{display:inline-flex;align-items:center;gap:5px;color:#59708e;font-size:12px}
+.form-error{background:#fff0f1;border:1px solid #ffd1d7;color:#c53d50;border-radius:7px;padding:10px 12px;font-size:11px;margin-bottom:15px}
+.form-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:20px}
+.data-table{width:100%;border-collapse:collapse;font-size:12px}
+.data-table th{font-size:10px;color:#657892;font-weight:600;background:#f9fbfd}
+.data-table th,.data-table td{padding:10px;border-bottom:1px solid #edf1f6;text-align:left;white-space:nowrap}
+.data-table td{color:#3d5575}.data-table.compact th,.data-table.compact td{padding:8px 7px}.data-table tr:last-child td{border-bottom:0}
+.table-scroll,.table-wrap{overflow:auto}
+@media(max-width:720px){
+ .page{padding-top:18px}.page-heading{align-items:flex-start;flex-direction:column}.heading-actions{width:100%;flex-wrap:wrap}
+ .data-table{min-width:620px}
+}

@@ -1,0 +1,13 @@
+@import url('../styles/shared.css');
+.report-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin-bottom:16px
+}
+.report-grid .chart-card{
+    min-height:390px
+}
+@media(max-width:720px){
+    .report-grid{grid-template-columns:1fr}
+    .report-grid .chart-card{min-height:0}}

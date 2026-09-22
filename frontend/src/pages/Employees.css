@@ -1,0 +1,131 @@
+@import url('../styles/shared.css');
+.filter-bar{
+    display:flex;
+    gap:9px;
+    margin-bottom:14px;flex-wrap:wrap
+}
+.filter-bar select,.search-input{
+    height:42px;
+    border:1px solid #dbe3ef;
+    border-radius:7px;
+    background:#fff;
+    color:#405977;
+    padding:0 11px
+}
+.search-input{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex:1;
+    min-width:250px
+}
+.search-input input{
+    border:0;
+    outline:0;
+    flex:1;
+    min-width:0
+}
+.filter-bar select{
+    min-width:150px
+}
+.employee-table-card{
+    overflow:hidden
+}
+.table-toolbar{
+    padding:14px 16px;
+    border-bottom:1px solid #edf1f6;
+    display:flex;
+    justify-content:space-between;
+    font-size:12px;color:#71829a
+}
+.employee-cell{
+    display:flex;
+    align-items:center;
+    gap:10px
+}
+.mini-avatar{
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:linear-gradient(145deg,#dbe8ff,#b4caed);
+    color:#244a87;
+    display:grid;
+    place-items:center;
+    font-weight:700;
+    font-size:10px
+}
+.employee-cell strong,.employee-cell span{
+    display:block
+}
+.employee-cell span{
+    font-size:10px;
+    color:#8796aa;
+    margin-top:3px
+}
+.status{
+    display:inline-flex;
+    border-radius:999px;
+    padding:5px 9px;
+    font-size:10px;
+    font-weight:600
+}
+.status.active{
+    background:#e6f8f0;
+    color:#178d6d
+}
+.status.on_leave{
+    background:#fff4dd;
+    color:#c77b08
+}
+.status.inactive{
+    background:#eef1f5;
+    color:#68778d
+}
+.row-actions{
+    display:flex;
+    gap:2px
+}
+.row-actions button{
+    border:0;
+    background:none;
+    color:#687b96;
+    padding:5px
+}
+.row-actions button:hover{
+    background:#f1f5fa;
+    border-radius:5px
+}
+.pagination{
+    display:flex;
+    gap:5px;
+    justify-content:flex-end;
+    padding:12px 16px
+}
+.pagination button{
+    border:1px solid #dbe3ee;
+    background:#fff;
+    color:#49617e;
+    border-radius:6px;
+    padding:6px 10px;
+    font-size:11px
+}
+.pagination button.current{
+    background:#2767d7;
+    color:#fff;
+    border-color:#2767d7
+}
+@media(max-width:720px){
+    .filter-bar>*{width:100%;min-width:0}
+    .search-input{min-width:0}
+    .employee-table-card{margin:0 -1px}
+    .table-scroll{overflow-x:auto}
+}
+
+.pagination button:disabled{opacity:.45;cursor:not-allowed}
+.pagination-ellipsis{
+    display:grid;
+    place-items:center;
+    padding:0 3px;
+    color:#70829a;
+    font-size:12px
+}
