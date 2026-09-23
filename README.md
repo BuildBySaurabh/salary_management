@@ -282,6 +282,15 @@ Possible future enhancements include:
 * AI-powered lending assistance and automation
 
 ---
+<img width="1241" height="1754" alt="Image" src="https://github.com/user-attachments/assets/34c620a8-aec2-4013-b211-2990d10eeed4" />
+<img width="1919" height="941" alt="Image" src="https://github.com/user-attachments/assets/fd2ca182-3d72-44c0-8d34-6efe16558d05" />
+<img width="1918" height="941" alt="Image" src="https://github.com/user-attachments/assets/14d95180-bc16-41af-b9ea-657eb8854a60" />
+<img width="1919" height="942" alt="Image" src="https://github.com/user-attachments/assets/245948b9-5cb7-46df-969d-5a23d65912fc" />
+<img width="1919" height="947" alt="Image" src="https://github.com/user-attachments/assets/a4b5929e-ad08-438f-94e9-be3a59fbf7b3" />
+<img width="1919" height="947" alt="Image" src="https://github.com/user-attachments/assets/fc13f3a2-9c3f-4841-9269-fcd52d6cf84d" />
+<img width="1913" height="944" alt="Image" src="https://github.com/user-attachments/assets/d37e8e31-0c90-40cb-a429-13299b2bede8" />
+<img width="1917" height="940" alt="Image" src="https://github.com/user-attachments/assets/ab45cbdf-362d-4cd4-9172-4f1aa3402d19" />
+
 
 ## Author
 
